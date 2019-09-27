@@ -2,15 +2,10 @@
 #Period
 
 def count(start, end, step):
-    ints = []
-    sep = ' '
-    if step == -1 and start > end:
-        return ""
-    else: 
-        for i in range(start, end, step):
-            ints.append(str(i))
-         
-    return sep.join(ints) + " "
+    output = ' '.join(map(str,range(start,end+(-1 if step < 0 else 1),step)))
+    if output != '':
+        output += ' '
+    return output
 
 
 
